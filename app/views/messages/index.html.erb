@@ -13,13 +13,24 @@
     </div>
 </div>
 
-<div>
-    <%= form_for(@message) do |f| %>
-      名前:
-      <%= f.text_area :name %>
-    
-      内容:
-      <%= f.text_area :body %>
-      <%= f.submit %>
-    <% end %>
-</div>
+
+<%= form_for(@message) do |f| %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            投稿
+        </div>
+        
+        <div class="panel-body">
+            
+            <div class="form-group">
+                <label>投稿者名</label>
+                <%= f.text_area :name ,class: "form-control",:size=>"60x1" %>
+            </div>
+            <div class="form-group">           
+                <label>内容</label>
+                <%= f.text_area :body ,class: "form-control",:size=>"60x10" %>
+            </div>        
+            <%= button_tag "投稿" %>
+        </div>
+    </div>
+<% end %>
